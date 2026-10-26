@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Virtual Assistant portfolio showcasing administrative, research, data entry, and technical support services.">
+  <title>Mecqueen Jun Tumampoc | Virtual Assistant</title>
+  <style>
+   
+:root {
+  color-scheme: dark;
+  --ink: #f1f5f9;
+  --muted: #a2b0c5;
+  --brand: #60a5fa;
+  --brand-dark: #3b82f6;
+  --pale: #17243a;
+  --line: #283750;
+  --white: #0b1120;
+  --mint: #102e32;
+  --radius: 20px;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+  --surface: #111b2e;
+  --surface-hover: #17243a;
+  --orange: #ff7138;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #080d18;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8, 13, 24, .88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(96, 165, 250, .15);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 130px;
+  width: auto;
+  max-width: 350px;
+  object-fit: contain;
+  display: block;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.nav-links a {
+  transition: color .2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--brand);
+}
+
+.menu-button {
+  display: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 19px;
+  border-radius: 12px;
+  font-weight: 750;
+  border: 1px solid transparent;
+  transition: .2s ease;
+  cursor: pointer;
+}
+
+.button-primary {
+  background: var(--brand-dark);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, .2);
+}
+
+.button-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, .3);
+}
+
+.button-secondary {
+  border-color: var(--line);
+  background: #111b2e;
+  color: var(--ink);
+}
+
+.button-secondary:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* HERO */
+
+.hero {
+  padding: 100px 0 88px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(37, 99, 235, .17), transparent 35%),
+    radial-gradient(ellipse at 10% 85%, rgba(255, 113, 56, .07), transparent 30%),
+    #080d18;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(16, 46, 50, .8);
+  border: 1px solid rgba(45, 212, 191, .2);
+  color: #5eead4;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 12px rgba(52, 211, 153, .45);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  letter-spacing: -.065em;
+  line-height: 1.06;
+  margin: 24px 0;
+  font-weight: 850;
+}
+
+h1 span {
+  color: var(--brand);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  max-width: 610px;
+  font-size: 1.08rem;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quick-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.quick-facts span::before {
+  content: "✓";
+  color: #5eead4;
+  font-weight: 900;
+  margin-right: 7px;
+}
+
+/* PROFILE CARD */
+
+.profile-card {
+  position: relative;
+  padding: 28px;
+  border: 1px solid #283750;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #131f34, #0d1525);
+  box-shadow: var(--shadow);
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid #354867;
+  background: #17243a;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-top h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: -.03em;
+}
+
+.profile-top p {
+  margin: 3px 0 0;
+  font-size: .9rem;
+}
+
+.mini-label {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #8fa2bd;
+  font-weight: 800;
+  font-size: .72rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.skill {
+  background: #17243a;
+  border: 1px solid #2b3e5c;
+  color: #bfdbfe;
+  padding: 7px 11px;
+  border-radius: 9px;
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 18px;
+  font-size: .91rem;
+  color: var(--muted);
+}
+
+/* SECTION DEFAULTS */
+
+section {
+  padding: 82px 0;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 36px;
+}
+
+.section-kicker {
+  color: #60a5fa;
+  font-weight: 850;
+  text-transform: uppercase;
+  font-size: .78rem;
+  letter-spacing: .14em;
+}
+
+h2.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -.05em;
+  margin: 10px 0 14px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ABOUT */
+
+#about {
+  background: #0c1322;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.about-highlight {
+  background: linear-gradient(145deg, #14233b, #101a2c);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+
+.about-highlight strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.about-highlight p,
+.about-copy p {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* SERVICES */
+
+#services {
+  background: #080d18;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.service-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 25px;
+  background: var(--surface);
+  transition: transform .25s ease, border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, .22);
+  border-color: #4778c9;
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #1a2c49;
+  border: 1px solid #2c4266;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+
+.service-card h3,
+.project-card h3 {
+  margin: 0 0 9px;
+  letter-spacing: -.025em;
+  color: #f1f5f9;
+}
+
+.service-card p,
+.project-card p {
+  color: var(--muted);
+  font-size: .94rem;
+  margin: 0;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  background: #0c1322;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #111b2e;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #4778c9;
+}
+
+.project-art {
+  min-height: 165px;
+  padding: 22px;
+  display: flex;
+  align-items: end;
+  background: linear-gradient(135deg, #1d3557, #123a3c);
+}
+
+.project-art.purple {
+  background: linear-gradient(135deg, #302454, #1c3154);
+}
+
+.project-art.gold {
+  background: linear-gradient(135deg, #493124, #173c3a);
+}
+
+.mock-window {
+  width: 100%;
+  background: rgba(10, 17, 31, .94);
+  border: 1px solid #334763;
+  border-radius: 12px;
+  padding: 13px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+}
+
+.mock-line {
+  height: 8px;
+  border-radius: 8px;
+  background: #34445d;
+  margin: 8px 0;
+}
+
+.mock-line.short {
+  width: 52%;
+}
+
+.mock-line.mid {
+  width: 76%;
+}
+
+.mock-pill {
+  display: inline-block;
+  height: 22px;
+  width: 64px;
+  border-radius: 6px;
+  background: #294d83;
+}
+
+.project-body {
+  padding: 23px;
+}
+
+.project-tag {
+  display: inline-block;
+  margin-top: 15px;
+  color: #93c5fd;
+  background: #1b2d49;
+  border: 1px solid #2a4264;
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.notice {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--brand);
+  background: #111f36;
+  color: #bdcbe0;
+  border-radius: 0 10px 10px 0;
+  font-size: .9rem;
+}
+
+/* WORK PROCESS */
+
+#process {
+  background: #080d18;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.process-step {
+  padding-top: 19px;
+  border-top: 2px solid #283750;
+}
+
+.step-number {
+  color: #60a5fa;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.process-step h3 {
+  margin: 10px 0 7px;
+  font-size: 1.05rem;
+}
+
+.process-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .91rem;
+}
+
+/* CONTACT */
+
+.contact {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(37, 99, 235, .16), transparent 40%),
+    #101a2b;
+  color: #f8fafc;
+  border-top: 1px solid #283750;
+}
+
+.contact .section-kicker {
+  color: #93c5fd;
+}
+
+.contact .section-heading p {
+  color: #b8c5d8;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-panel {
+  background: rgba(8, 13, 24, .55);
+  border: 1px solid #2c3d57;
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.contact-item {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.contact-item:last-child {
+  border-bottom: 0;
+}
+
+.contact-item small {
+  display: block;
+  color: #9eafc6;
+  margin-bottom: 4px;
+}
+
+.contact-item a {
+  overflow-wrap: anywhere;
+  color: #dbeafe;
+  transition: color .2s ease;
+}
+
+.contact-item a:hover {
+  color: #60a5fa;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 24px 0;
+  color: #8fa0b8;
+  background: #060a12;
+  border-top: 1px solid #1b293d;
+  font-size: .87rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 800px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 20px 22px;
+    background: #0c1322;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-button {
+    display: inline-block;
+  }
+
+  .logo-img {
+    height: 48px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: min(100% - 28px, 1100px);
+  }
+
+  .cards,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .profile-card {
+    padding: 21px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 12vw, 3.4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- CUSTOMIZE: replace "Your Name", email, and profile links before publishing. -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home">
+    <img src="img/MecBurns Fiery Tech Logo.png" alt="MecBurns Logo" class="logo-img">
+</a>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-label="Open navigation">Menu ☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#process">How I Work</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Available for remote opportunities</div>
+          <h1>Reliable support for your <span>everyday business.</span></h1>
+          <p>Hi, I'm <strong> Mecqueen Jun Tumampoc </strong> — an aspiring Virtual Assistant and IT graduate. I help busy professionals stay organized through accurate data entry, online research, document support, and practical technical assistance.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Let's work together <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#portfolio">View sample work</a>
+          </div>
+          <div class="quick-facts"><span>Detail-oriented</span><span>Organized</span><span>Ready to learn</span></div>
+        </div>
+        <aside class="profile-card" aria-label="Profile and skills">
+          <div class="profile-top">
+            <div class="avatar">
+    <img src="img/mecburns_prof.png" alt="Your profile picture">
+</div>
+            <div><h2>Mecqueen Jun Tumampoc</h2><p style="color:var(--muted)">Virtual Assistant · IT Graduate</p></div>
+          </div>
+          <div class="mini-label">Services & tools</div>
+          <div class="skill-list">
+            <span class="skill">Graphic Design</span><span class="skill">Canva</span>
+            <span class="skill">Web Developer</span><span class="skill">Laravel Framework</span>
+            <span class="skill">Data Entry</span><span class="skill">Google Workspace</span>
+            <span class="skill">Web Research</span><span class="skill">Document Formatting</span>
+            <span class="skill">Email Support</span><span class="skill">Basic IT Support</span>
+          </div>
+          <div class="availability"><span class="dot"></span><span>Open to entry-level remote opportunities</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading"><div class="section-kicker">A little about me</div><h2 class="section-title">A dependable extra pair of hands for your business.</h2><p>Professional, careful, and committed to helping work run more smoothly.</p></div>
+        <div class="about-grid">
+          <div class="about-highlight"><strong>My work philosophy</strong><p>I value clear communication, accuracy, confidentiality, and meeting agreed deadlines. I ask questions when instructions are unclear and keep tasks organized so nothing gets missed.</p><span class="mini-label">My focus</span><div class="skill-list"><span class="skill">Accuracy</span><span class="skill">Communication</span><span class="skill">Organization</span></div></div>
+          <div class="about-copy"><p>I have an Information Technology background and experience with common computer tasks, document handling, Graphic Design, data entry, and basic troubleshooting. I'm building my Virtual Assistant career by strengthening my administrative and online-work skills.</p><p>As I grow, I aim to combine dependable administrative support with my technical background to help clients manage routine tasks, organize information, and handle simple technology-related needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading"><div class="section-kicker">What I can help with</div><h2 class="section-title">Practical services that save you time.</h2><p>Start with services you can demonstrate confidently. You can expand your offerings as you gain experience.</p></div>
+        <div class="cards">
+          <article class="service-card"><div class="service-icon">⌨️</div><h3>Data Entry</h3><p>Entering, cleaning, and organizing information in spreadsheets, forms, and databases with attention to detail.</p></article>
+          <article class="service-card"><div class="service-icon">🔎</div><h3>Web Research</h3><p>Finding information online, organizing source links, and preparing clear research summaries.</p></article>
+          <article class="service-card"><div class="service-icon">📄</div><h3>Documents & Reports</h3><p>Formatting documents, organizing files, preparing simple reports, and converting information into readable formats.</p></article>
+          <article class="service-card"><div class="service-icon">✉️</div><h3>Email & Admin Support</h3><p>Drafting routine emails, organizing task lists, maintaining calendars, and helping keep daily work on track.</p></article>
+          <article class="service-card"><div class="service-icon">🧰</div><h3>Basic IT Assistance</h3><p>Helping with basic software setup, common computer issues, file organization, and clear troubleshooting notes.</p></article>
+          <article class="service-card"><div class="service-icon">🌐</div><h3>Website Support</h3><p>Assisting with simple website updates, content checks, link testing, and basic site maintenance when requested.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-heading"><div class="section-kicker">Selected sample work</div><h2 class="section-title">A few examples of how I work.</h2><p>These are portfolio project ideas. Create the actual sample files and link them here before describing them as completed projects.</p></div>
+        <div class="cards">
+          <article class="project-card"><div class="project-art"><div class="mock-window"><span class="mock-pill"></span><div class="mock-line mid"></div><div class="mock-line"></div><div class="mock-line short"></div></div></div><div class="project-body"><h3>Inventory Spreadsheet</h3><p>A sample spreadsheet with item names, categories, quantities, and low-stock flags to demonstrate spreadsheet organization.</p><span class="project-tag">Google Sheets / Excel</span></div></article>
+          <article class="project-card"><div class="project-art purple"><div class="mock-window"><div class="mock-line short"></div><div class="mock-line mid"></div><div class="mock-line"></div><div class="mock-line short"></div></div></div><div class="project-body"><h3>Web Research Report</h3><p>A structured research document showing source links, key findings, and a concise summary for a hypothetical client request.</p><span class="project-tag">Research & Docs</span></div></article>
+          <article class="project-card"><div class="project-art gold"><div class="mock-window"><span class="mock-pill"></span><div class="mock-line"></div><div class="mock-line mid"></div><div class="mock-line short"></div></div></div><div class="project-body"><h3>Admin Task Tracker</h3><p>A simple task tracker with due dates, priorities, status, and notes to show how I organize recurring work.</p><span class="project-tag">Organization</span></div></article>
+        </div>
+    
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-heading"><div class="section-kicker">How I work</div><h2 class="section-title">Simple, clear, and organized.</h2></div>
+        <div class="process-grid">
+          <div class="process-step"><div class="step-number">STEP 01</div><h3>Understand</h3><p>Confirm the task, expected result, deadline, and priorities.</p></div>
+          <div class="process-step"><div class="step-number">STEP 02</div><h3>Organize</h3><p>Break work into manageable steps and keep files clearly named.</p></div>
+          <div class="process-step"><div class="step-number">STEP 03</div><h3>Complete</h3><p>Work carefully and check details before delivering the result.</p></div>
+          <div class="process-step"><div class="step-number">STEP 04</div><h3>Update</h3><p>Communicate progress and flag questions or delays early.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-heading"><div class="section-kicker">Get in touch</div><h2 class="section-title">Need reliable support?</h2><p>I'm open to discussing entry-level Virtual Assistant opportunities and suitable projects. Send a message to talk about your needs.</p></div>
+          <a class="button button-primary" href="mailto:your.email@example.com?subject=Virtual%20Assistant%20Opportunity">Email me <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="contact-panel">
+          <div class="contact-item"><small>Email</small><a href="mailto:your.email@example.com">tumampocmecqueenjun7@gmail.com</a></div>
+
+          <div class="contact-item"><small>Location / time zone</small><span>Philippines (PHT, UTC+8)</span></div>
+          <div class="contact-item"><small>Availability</small><span>Anytime at your comfort</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Mecburns. All rights reserved.</span><span>Built with care · Virtual Assistant Portfolio</span></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
